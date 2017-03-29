@@ -1,0 +1,32 @@
+.issues-view {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.triage-table {
+    padding-right: 5em;
+    padding-left: 1em;
+}
+
+.ticket-table {
+  padding-right: 1em;
+  margin-right: 0.5em;
+}
+
+.row-title {
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    /* max-width: 500px;
+    padding: 0 30px; */
+}
+
+.ticket-buttons {
+    display:flex;
+    justify-content: space-around;
+}
+
+.ticket-buttons .icon {
+    border: 2px solid black;
+}

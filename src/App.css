@@ -1,0 +1,105 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,700);
+
+h1, h2, h3, h4, h5 {
+  font-family: "Merriweather";
+}
+
+input, button, submit { 
+  border:none; 
+  background: none;
+} 
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.nav-main {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-list li {
+  display: inline-block;
+  flex-flow: column wrap;
+}
+
+.nav-list a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5em;
+  margin: 1em;
+  border: 2px solid #fff;
+  border-radius: 10px;
+
+  -webkit-transition: background-color color 1s;
+  transition: background-color color 1s;
+}
+
+.nav-list a:hover {
+  color: #222;
+  background-color: #fff;
+    
+  -webkit-transition: background-color color 1s;
+  transition: background-color color 1s;
+}
+
+@media all and (max-width: 800px) {
+  .nav-main {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .nav-main {
+    flex-flow: column wrap;
+  }
+}
+
+.App {
+  text-align: center;
+  font-family: "Open Sans";
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+  display: block;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.App-header {
+  background-color: #222;
+  height: 10em;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+
+.App-intro {
+  font-size: large;
+}
+
+.title-main {
+  margin: auto;
+}
+
+
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+

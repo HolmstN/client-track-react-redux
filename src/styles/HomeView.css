@@ -1,0 +1,16 @@
+.all-areas {
+    display: flex;
+    justify-content: space-around;
+}
+
+.all-areas ul {
+    list-style: none;
+    padding: 0;
+}
+
+.search {
+    border: thin solid #919191;
+    border-radius: 20px;
+    padding: 10px;
+    width: 30em;
+}
