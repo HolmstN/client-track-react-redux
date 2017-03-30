@@ -1,0 +1,44 @@
+.table {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+
+
+.table-row {
+    display: flex;
+    justify-content: space-around;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+}
+
+.table-cell {
+    width: 200px;
+    padding: 0.625em 0;
+}
+
+.table-head {
+    border: 1px solid #1e3151;
+    background: #1e3151;
+    color: #fff;
+}
+
+.table-head-item {
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: .85em;
+}
+
+.detail-cell {
+    padding-bottom: 1.25em;
+    padding-top: .5em;
+    flex-grow: 1;
+    justify-content: space-around;
+}
+
+
+.detail-cell button {
+    border: 1px solid #1e3151;
+    border-radius: 10px;
+}

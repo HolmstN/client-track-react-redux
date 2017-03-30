@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import '../styles/ClientsView.css';
+
 const CLIENTS = [
     {clientName: "Alphabet Soup", clientCode: "ABCS", connectionPrimary: "10.5.3.12", key: "0"},
     {clientName: "Infian, LLC", clientCode: "INFI", connectionPrimary: "255.255.255.255", key: "1"},
@@ -61,7 +63,7 @@ class ClientsArea extends Component {
                             connectionPrimary={client.connectionPrimary}
                             changeSelectedRow = {this.changeSelectedRow}
                         />
-                        <ClientsDetail />
+                        <ClientsDetail changeSelectedRow = {this.changeSelectedRow} />
                     </div>
                 );
             } else {
@@ -117,10 +119,27 @@ function ClientsButtons(props) {
     );
 }
 
-function ClientsDetail(props) {
-    return(
-        <div className="table-row"><div className="table-cell" colSpan="4">CLIENTS DETAIL</div></div>
-    );    
+class ClientsDetail extends Component {
+    constructor(props) {
+        super(props);
+        
+        this.handleClick = this.handleClick.bind(this);
+    }
+    
+    handleClick(e) {
+        this.props.changeSelectedRow(e);
+    }
+    
+    render() {
+        return(
+            <div className="table-row">
+                <div className="detail-cell">
+                    <button value="" onClick={() => this.handleClick()}>Close</button>
+                    <div class="detail-cell-header">CLIENTS DETAIL</div>
+                </div>
+            </div>
+        ); 
+    }
 }
 
 export default ClientsView;
