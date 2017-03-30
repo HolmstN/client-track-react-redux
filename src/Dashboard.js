@@ -35,7 +35,12 @@ class Dashboard extends Component {
     
     this.handleViewChange = this.handleViewChange.bind(this);
     this.isActive = this.isActive.bind(this);
+    // this.linkWorkInProgress = this.linkWorkInProgress.bind(this);
   }
+  
+  /* linkWorkInProgress(event) {
+    alert("This area is not yet ready for use");
+  } */
   
   handleViewChange(event) {
     event.preventDefault();
