@@ -68,7 +68,7 @@ class Dashboard extends Component {
         <li className={this.isActive('home')}><button id="nav-button-home" className="menu__link nav-button" value="home" onClick={this.handleViewChange}>Home</button></li>
         <li className={this.isActive('issues')}><button id="nav-button-issues" className="menu__link nav-button" value="issues" onClick={this.handleViewChange}>Issues</button></li>
         <li className={this.isActive('projects')}><button id="nav-button-projects" className="menu__link nav-button" value="projects" onClick={this.handleViewChange}>Projects</button></li>
-        <li className={this.isActive('clients')}><button id="nav-button-clients" className="menu__link nav-button" value="clients" onClick={this.areaUnavailable}>Clients</button></li>
+        <li className={this.isActive('clients')}><button id="nav-button-clients" className="menu__link nav-button" value="clients" onClick={this.handleViewChange}>Clients</button></li>
       </ul>
     </nav>
     

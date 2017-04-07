@@ -61,9 +61,9 @@ class ClientsArea extends Component {
                             clientName={client.clientName} 
                             clientCode={client.clientCode} 
                             connectionPrimary={client.connectionPrimary}
-                            changeSelectedRow = {this.changeSelectedRow}
+                            changeSelectedRow={this.changeSelectedRow}
                         />
-                        <ClientsDetail changeSelectedRow = {this.changeSelectedRow} />
+                        <ClientsDetail changeSelectedRow={this.changeSelectedRow} />
                     </div>
                 );
             } else {
@@ -73,7 +73,7 @@ class ClientsArea extends Component {
                             clientCode={client.clientCode} 
                             connectionPrimary={client.connectionPrimary}
                             key={client.key}
-                            changeSelectedRow = {this.changeSelectedRow}
+                            changeSelectedRow={this.changeSelectedRow}
                         />
                 );
             }
@@ -135,7 +135,7 @@ class ClientsDetail extends Component {
             <div className="table-row">
                 <div className="detail-cell">
                     <button value="" onClick={() => this.handleClick()}>Close</button>
-                    <div class="detail-cell-header">CLIENTS DETAIL</div>
+                    <div className="detail-cell-header">CLIENTS DETAIL</div>
                 </div>
             </div>
         ); 
