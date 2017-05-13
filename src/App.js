@@ -3,9 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 import 'react-virtualized/styles.css'
 
-import { Provider } from 'react-redux';
-import ProjectForm from './components/ProjectForm.js'
-
 import Dashboard from './Dashboard';
 
 class App extends Component {
@@ -23,7 +20,7 @@ class App extends Component {
             
             <div className="App-header-content">
               <img src={logo} className="App-logo" alt="logo" />
-                <h2 className="title-main">INFIAN Client Tracker</h2>
+                <h2 className="title-main">Client Tracker</h2>
             </div>
           </div>
 
