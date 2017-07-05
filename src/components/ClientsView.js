@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 
 import '../styles/ClientsView.css';
 
+import * as actionCreators from '../actions/clients'
+
 import Client from './Client'
-import FilledClientList from '../containers/FillClientList'
+import FilledClientsList from '../containers/FillClientList'
 import AddClientButton from './AddClientButton'
 import ClientForm from '../components/ClientForm'
-import addClient from '../actions/clients'
 
 const CLIENTS = [
     {clientName: "Alphabet Soup", clientCode: "ABCS", connectionPrimary: "10.5.3.12"},
@@ -17,17 +19,18 @@ const CLIENTS = [
 
 let ClientsView = ({dispatch}) => {
     const doSubmit = (values) => {
-        dispatch(addClient(values))
+        dispatch(actionCreators.addClient(values))
     }
     
     return (
         <div className="clients-view">
             <AddClientButton />
-            <ClientForm />
+            <ClientForm onSubmit={doSubmit}/>
             <ClientsTable />
         </div>
     );
 }
+
 
 function ClientsTable(props) {
     return (
@@ -39,10 +42,11 @@ function ClientsTable(props) {
                     <div className="table-cell table-head-item">Primary Connection</div>
                     <div className="table-cell table-head-item">&nbsp;</div>
                 </div>
-                <FilledClientList />
+                <FilledClientsList />
             </div>
         </div>
     );
 }
+
 
 export default connect()(ClientsView);

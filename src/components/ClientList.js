@@ -14,9 +14,9 @@ export const ClientList = ({clients, onClientClick}) => (
 )
 
 
-/*  OLD STUFF BELOW
+//  OLD STUFF BELOW
 
-
+/*
 class ClientList extends Component {
     constructor(props) {
         super(props);

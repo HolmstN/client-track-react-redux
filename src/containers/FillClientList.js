@@ -14,6 +14,8 @@ const getVisibileClients = (clients, filter) => {
 }
 
 const mapStateToProps = (state) => {
+    console.log("state in Client List:")
+    console.log(state)
     return {
         clients: getVisibileClients(state.clients, state.visibilityFilter)
     }   

@@ -13,11 +13,13 @@ export const MAKE_SELECTED_CLIENT = 'MAKE_SELECTED_CLIENT'
 let nextClientId = 0;
 
 export const addClient = (client) => {
-    return {
+    let newClient = {
         type: ADD_CLIENT,
         id: nextClientId++,
         ...client
     }
+    console.log("Inside action creator\n:" + newClient)
+    return newClient
 }
 
 export const editClient = (client) => {
