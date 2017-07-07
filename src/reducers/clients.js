@@ -10,20 +10,19 @@ import {
 const client = (state = {}, action) => {
     switch (action.type) {
         case ADD_CLIENT:
-            return {
-                id: action.id,
+            return Object.assign({}, state, {
                 ...action.client
-            }
+            })
+            
         case EDIT_CLIENT:
-            if (state.id !== action.client.id) {
+            if (state.id !== action.id) {
                 return state
             }
             
             return Object.assign({}, state, action.client)
             
-        // is this necessary?  could use edit client...    
         case TOGGLE_CLIENT_ACTIVE: {
-            if (state.id !== action.client.id) {
+            if (state.id !== action.id) {
                 return state
             }
             
@@ -32,7 +31,7 @@ const client = (state = {}, action) => {
         }
         
         case MAKE_SELECTED_CLIENT: {
-            if (state.id !== action.client.id) {
+            if (state.id !== action.id) {
                 return Object.assign({}, state, {
                     detailed: false
                 })
@@ -49,7 +48,7 @@ const client = (state = {}, action) => {
     }
 }
 
-export const clients = (state = [], action) => {
+const clients = (state = [], action) => {
     switch (action.type) {
         case ADD_CLIENT:
             return [
@@ -65,3 +64,5 @@ export const clients = (state = [], action) => {
             return state
     }
 }
+
+export default clients

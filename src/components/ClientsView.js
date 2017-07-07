@@ -7,9 +7,9 @@ import '../styles/ClientsView.css';
 import * as actionCreators from '../actions/clients'
 
 import Client from './Client'
-import FilledClientsList from '../containers/FillClientList'
 import AddClientButton from './AddClientButton'
 import ClientForm from '../components/ClientForm'
+import ClientList from './ClientList'
 
 const CLIENTS = [
     {clientName: "Alphabet Soup", clientCode: "ABCS", connectionPrimary: "10.5.3.12"},
@@ -17,7 +17,7 @@ const CLIENTS = [
     {clientName: "BATMAN", clientCode: "DUNU", connectionPrimary: "10.93.222.8"}
 ];
 
-let ClientsView = ({dispatch}) => {
+const ClientsView = ({dispatch}) => {
     const doSubmit = (values) => {
         dispatch(actionCreators.addClient(values))
     }
@@ -42,7 +42,7 @@ function ClientsTable(props) {
                     <div className="table-cell table-head-item">Primary Connection</div>
                     <div className="table-cell table-head-item">&nbsp;</div>
                 </div>
-                <FilledClientsList />
+                <ClientList />
             </div>
         </div>
     );

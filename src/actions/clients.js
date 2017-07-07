@@ -15,10 +15,11 @@ let nextClientId = 0;
 export const addClient = (client) => {
     let newClient = {
         type: ADD_CLIENT,
-        id: nextClientId++,
-        ...client
+        client: {
+            id: nextClientId++,
+            ...client
+        }
     }
-    console.log("Inside action creator\n:" + newClient)
     return newClient
 }
 

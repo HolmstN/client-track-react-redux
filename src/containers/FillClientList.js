@@ -1,3 +1,6 @@
+// Depracated
+
+/* 
 import { connect } from 'react-redux'
 import { ClientList } from '../components/ClientList'
 import makeSelectedClient from '../actions/clients'
@@ -14,8 +17,6 @@ const getVisibileClients = (clients, filter) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log("state in Client List:")
-    console.log(state)
     return {
         clients: getVisibileClients(state.clients, state.visibilityFilter)
     }   
@@ -29,9 +30,5 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const FilledClientsList = connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(ClientList)
 
-export default FilledClientsList
+*/

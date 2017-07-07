@@ -1,18 +1,58 @@
 import React, {Component} from 'react'
 import Client from './Client'
+import { connect } from 'react-redux'
+import { makeSelectedClient } from '../actions/clients'
 
-export const ClientList = ({clients, onClientClick}) => (
-    <div className="tbody">
-        {clients.map(client =>
-            <Client
-                key={client.id}
-                {...client}
-                onClick={() => onClientClick(client.id)}
-            />
-        )}
-    </div>
-)
+const ClientList = ({clients, onClientClick}) => {
+    let shownClients = clients.map((client) => {
+            return (
+                <Client
+                    key={client.id}
+                    {...client}
+                    onClick={() => onClientClick(client.id)}
+                />
+        )})
+        
+    return (
+        <div className="tbody">
+            {shownClients}
+        </div>
+    )
+}
 
+
+const getVisibileClients = (clients, visFilter) => {
+    switch (visFilter) {
+        case 'SHOW_ALL':
+            return clients
+        case 'SHOW_ACTIVE':
+            return clients.filter(c => c.active)
+        case 'SHOW_INACTIVE':
+            return clients.filter(c => c.inactive)
+    }
+}
+
+const mapStateToProps = (state) => {
+    return {
+        clients: getVisibileClients(state.clients, state.visibilityFilter)
+    }   
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onClientClick: (id) => {
+            dispatch(makeSelectedClient(id))
+        }
+    }
+}
+
+const VisibleClientList = connect(
+    mapStateToProps, 
+    mapDispatchToProps
+)(ClientList)
+
+
+export default VisibleClientList
 
 //  OLD STUFF BELOW
 

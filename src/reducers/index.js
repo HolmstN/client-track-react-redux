@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { clients } from './clients'
+import clients from './clients'
 import visibilityFilter from './visibilityFilter'
 import { reducer as formReducer } from 'redux-form'
 

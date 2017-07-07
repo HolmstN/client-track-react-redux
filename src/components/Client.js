@@ -1,12 +1,16 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
+import Test from './Test'
 
-export const Client = ({onClick, clientName, clientCode, connectionPrimary}) => {
-    <div className="table-row" value={clientCode} onClick={onClick}>
-        <div className="table-cell">{clientName}</div>
-        <div className="table-cell">{clientCode}</div>
-        <div className="table-cell">{connectionPrimary}</div>
-        <div className="table-cell"><ClientsButtons /></div>
-    </div>
+function Client({onClick, clientCode, clientName, connectionPrimary}) {
+    return (
+        <div className="table-row" value={clientCode} onClick={onClick}>
+            <div className="table-cell">{clientName}</div>
+            <div className="table-cell">{clientCode}</div>
+            <div className="table-cell">{connectionPrimary}</div>
+            <div className="table-cell"><ClientsButtons /></div>
+        </div>
+    )
 }
 
 function ClientsButtons(props) {
@@ -16,3 +20,5 @@ function ClientsButtons(props) {
         </div>
     );
 }
+
+export default Client
