@@ -35,10 +35,11 @@ const client = (state = {}, action) => {
                 return Object.assign({}, state, {
                     detailed: false
                 })
-            }
+            } 
             
             return Object.assign({}, state, {
-                detailed: true
+                detailed: !state.detailed
+                //detailed: true
             })
         }
             

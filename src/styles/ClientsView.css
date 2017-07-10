@@ -18,6 +18,10 @@
     padding: 0.625em 0;
 }
 
+.table-row:not(.table-head):hover {
+    background: #dee9fc;
+}
+
 .table-head {
     border: 1px solid #1e3151;
     background: #1e3151;

@@ -1,16 +1,27 @@
+// eslint-disable-next-line
 import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
-import Test from './Test'
 
-function Client({onClick, clientCode, clientName, connectionPrimary}) {
-    return (
-        <div className="table-row" value={clientCode} onClick={onClick}>
-            <div className="table-cell">{clientName}</div>
-            <div className="table-cell">{clientCode}</div>
-            <div className="table-cell">{connectionPrimary}</div>
-            <div className="table-cell"><ClientsButtons /></div>
-        </div>
-    )
+function Client({onClick, clientCode, clientName, connectionPrimary, detailed, details}) {
+    let clientData = 
+            <div className="table-row" value={clientCode} onClick={onClick}>
+                <div className="table-cell">{clientName}</div>
+                <div className="table-cell">{clientCode}</div>
+                <div className="table-cell">{connectionPrimary}</div>
+                <div className="table-cell"><ClientsButtons /></div>
+            </div>;
+            
+    if (detailed) {
+        return (
+            <div>
+                {clientData}
+                <div className="detail-cell">{details.notes}</div>
+            </div>
+        )
+    } else {
+        return (
+            clientData
+        )
+    }
 }
 
 function ClientsButtons(props) {

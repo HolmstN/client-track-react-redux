@@ -1,31 +1,25 @@
+// eslint-disable-next-line
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 
 import '../styles/ClientsView.css';
 
 import * as actionCreators from '../actions/clients'
 
-import Client from './Client'
 import AddClientButton from './AddClientButton'
 import ClientForm from '../components/ClientForm'
 import ClientList from './ClientList'
 
-const CLIENTS = [
-    {clientName: "Alphabet Soup", clientCode: "ABCS", connectionPrimary: "10.5.3.12"},
-    {clientName: "Google", clientCode: "GOOG", connectionPrimary: "255.255.255.255"},
-    {clientName: "BATMAN", clientCode: "DUNU", connectionPrimary: "10.93.222.8"}
-];
 
 const ClientsView = ({dispatch}) => {
-    const doSubmit = (values) => {
-        dispatch(actionCreators.addClient(values))
+    const doSubmit = (client) => {
+        dispatch(actionCreators.addClient(client))
     }
     
     return (
         <div className="clients-view">
             <AddClientButton />
-            <ClientForm onSubmit={doSubmit}/>
+            <ClientForm onSubmit={doSubmit} />
             <ClientsTable />
         </div>
     );

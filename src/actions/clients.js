@@ -17,7 +17,7 @@ export const addClient = (client) => {
         type: ADD_CLIENT,
         client: {
             id: nextClientId++,
-            ...client
+            ...client,
         }
     }
     return newClient

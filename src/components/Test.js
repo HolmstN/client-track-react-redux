@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, {Component, PropTypes} from 'react'
 
 function Test() {

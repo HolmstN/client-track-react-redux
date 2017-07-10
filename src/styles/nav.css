@@ -55,11 +55,11 @@
 
 .menu--sebastian .menu__link:hover,
 .menu--sebastian .menu__link:focus {
-	color: #d94f5c;
+	color: #3b93d6;
 }
 
 .menu--sebastian .menu__item--current .menu__link {
-	color: #d94f5c;
+	color: #3b93d6;
 }
 
 .menu--sebastian .menu__link::before,
@@ -69,7 +69,7 @@
 	left: 0;
 	width: 100%;
 	height: 2px;
-	background: #d94f5c;
+	background: #3b93d6;
 	-webkit-transform: scale3d(0, 1, 1);
 	transform: scale3d(0, 1, 1);
 	-webkit-transition: -webkit-transform 0.2s;

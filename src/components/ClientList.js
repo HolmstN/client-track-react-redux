@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, {Component} from 'react'
 import Client from './Client'
 import { connect } from 'react-redux'
@@ -29,6 +30,8 @@ const getVisibileClients = (clients, visFilter) => {
             return clients.filter(c => c.active)
         case 'SHOW_INACTIVE':
             return clients.filter(c => c.inactive)
+        default:
+            return clients
     }
 }
 
