@@ -1,12 +1,9 @@
 // eslint-disable-next-line
 import React, {Component} from 'react'
 
-function AddClientButton() {
+const AddClientButton = ({onClick, clientFormOpen, text}) => {
     return (
-        <div className="button add-client">
-            <a href="/client-info">
-            </a>
-        </div>
+        <button name="addClientButton" onClick={onClick}>{text}</button>
     )
 }
 

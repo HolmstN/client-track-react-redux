@@ -2,12 +2,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
+
 import '../styles/ClientsView.css';
 
 import * as actionCreators from '../actions/clients'
 
-import AddClientButton from './AddClientButton'
-import ClientForm from '../components/ClientForm'
+import AddClient from './AddClient'
 import ClientList from './ClientList'
 
 
@@ -18,8 +18,7 @@ const ClientsView = ({dispatch}) => {
     
     return (
         <div className="clients-view">
-            <AddClientButton />
-            <ClientForm onSubmit={doSubmit} />
+            <AddClient onSubmit={doSubmit} />
             <ClientsTable />
         </div>
     );

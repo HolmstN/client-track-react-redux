@@ -2,14 +2,9 @@ import React, { Component } from 'react';
 
 import '../styles/HomeView.css';
 
-var pluralize=require('pluralize');
+import pluralize from 'pluralize'
 
-var ITEMS = [
-  {id: 0,name: "Item 1"},
-  {id: 1,name: "Item 2"},
-  {id: 2,name: "Item 3"},
-  {id: 3,name: "Item 4"},
-];
+import ClientList  from './ClientList'
 
 
 function HomeView(props) {
@@ -49,7 +44,7 @@ class Area extends Component {
           onUserInput={this.handleUserInput}
         />
         <FilteredList 
-          items={ITEMS}
+          items={ClientList}
           filterText={this.state.filterText} />
         <GoToAll type={this.props.type} />
       </div>

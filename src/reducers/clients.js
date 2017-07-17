@@ -4,7 +4,7 @@ import {
     ADD_CLIENT, 
     EDIT_CLIENT, 
     TOGGLE_CLIENT_ACTIVE, 
-    MAKE_SELECTED_CLIENT 
+    MAKE_SELECTED_CLIENT
 } from '../actions/clients'
 
 const client = (state = {}, action) => {

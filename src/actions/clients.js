@@ -7,7 +7,6 @@ export const EDIT_CLIENT = 'EDIT_CLIENT'
 export const TOGGLE_CLIENT_ACTIVE = 'TOGGLE_CLIENT_ACTIVE'
 export const MAKE_SELECTED_CLIENT = 'MAKE_SELECTED_CLIENT'
 
-
 // action creators //
 
 let nextClientId = 0;
