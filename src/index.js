@@ -7,8 +7,13 @@ import rootReducer from './reducers'
 import './index.css'
 import App from './App'
 
+const initialState = {
+  clients: [{clientCode: "INF", clientName: "Infian", connectionPrimary: "N/A", key: "001"}]
+}
+
 let store = createStore(
   rootReducer,
+  initialState,
   applyMiddleware(logger)
 )
 

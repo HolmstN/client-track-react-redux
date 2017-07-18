@@ -7,6 +7,8 @@ export const VisibilityFilters = {
 }
 
 export const setVisibilityFilters = (filter) => {
-    type: SET_VISIBILITY_FILTER,
-    filter
+    return {
+        type: SET_VISIBILITY_FILTER,
+        filter
+    }
 }

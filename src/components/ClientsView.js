@@ -8,7 +8,7 @@ import '../styles/ClientsView.css';
 import * as actionCreators from '../actions/clients'
 
 import AddClient from './AddClient'
-import ClientList from './ClientList'
+import VisibleClientList from './ClientsVisibility'
 
 
 const ClientsView = ({dispatch}) => {
@@ -35,7 +35,7 @@ function ClientsTable(props) {
                     <div className="table-cell table-head-item">Primary Connection</div>
                     <div className="table-cell table-head-item">&nbsp;</div>
                 </div>
-                <ClientList />
+                <VisibleClientList />
             </div>
         </div>
     );
