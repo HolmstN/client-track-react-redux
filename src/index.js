@@ -8,7 +8,7 @@ import './index.css'
 import App from './App'
 
 const initialState = {
-  clients: [{clientCode: "INF", clientName: "Infian", connectionPrimary: "N/A", key: "001"}]
+  clients: [{clientCode: "INF", clientName: "Infian", connectionPrimary: "N/A", id: 0, key: "0"}]
 }
 
 let store = createStore(

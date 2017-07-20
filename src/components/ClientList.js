@@ -2,13 +2,14 @@
 import React, {Component} from 'react'
 import Client from './Client'
 
-const ClientList = ({clients, onClientClick}) => {
+const ClientList = ({clients, onClientClick, size}) => {
     let shownClients = clients.map((client) => {
             return (
                 <Client
                     key={client.id}
                     {...client}
                     onClick={() => onClientClick(client.id)}
+                    size={size}
                 />
         )})
         

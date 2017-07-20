@@ -35,7 +35,7 @@ function ClientsTable(props) {
                     <div className="table-cell table-head-item">Primary Connection</div>
                     <div className="table-cell table-head-item">&nbsp;</div>
                 </div>
-                <VisibleClientList />
+                <VisibleClientList size="large" />
             </div>
         </div>
     );

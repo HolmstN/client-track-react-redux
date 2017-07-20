@@ -1,6 +1,9 @@
 // eslint-disable-next-line
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+
+import '../styles/ClientForm.css'
 
 import ClientForm from './ClientForm'
 import AddClientButton from './AddClientButton'
@@ -10,8 +13,17 @@ const AddClients = ({onSubmit, clientFormOpen, onAddClick}) => {
     if (clientFormOpen) {
         return (
         <div>
-            <ClientForm onSubmit={onSubmit} />
-            <AddClientButton onClick={() => onAddClick(clientFormOpen) } text="Cancel" />
+        <ReactCSSTransitionGroup
+            transitionName="example"
+            transitionAppear={true}
+            transitionAppearTimeout={500}
+            transitionEnter={false}
+            transitionLeaveTimeout={300}>
+                <div>
+                    <ClientForm onSubmit={onSubmit} key="clientForm" />
+                    <AddClientButton onClick={() => onAddClick(clientFormOpen) } text="Cancel" key="AddClientButton" />
+                </div>
+        </ReactCSSTransitionGroup>
         </div>
         )
     }

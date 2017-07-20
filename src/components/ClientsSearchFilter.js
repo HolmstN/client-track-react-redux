@@ -5,7 +5,11 @@ import ClientList from './ClientList'
 
 const getSearchedClients = (clients, searchText) => {
   return clients.filter(c => {
-        return c.clientName.toLowerCase().includes(searchText.toLowerCase())
+        return (
+          c.clientName.toLowerCase().includes(searchText.toLowerCase()) 
+          ||
+          c.clientCode.toLowerCase().includes(searchText.toLowerCase())
+        )
   })
 }
 

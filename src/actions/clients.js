@@ -9,7 +9,7 @@ export const MAKE_SELECTED_CLIENT = 'MAKE_SELECTED_CLIENT'
 
 // action creators //
 
-let nextClientId = 0;
+let nextClientId = 1;
 
 export const addClient = (client) => {
     let newClient = {

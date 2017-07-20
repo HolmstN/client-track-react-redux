@@ -1,0 +1,61 @@
+@import 'colors';
+
+/*
+@keyframes sheen {
+  0% {
+    transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+*/
+
+.button-holder {
+    display: block;
+    margin: 0 auto;
+    width: 20%;
+    text-align: center;
+}
+
+.button {
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none;
+  color: $buttonColor;
+  border: 2px solid $buttonColor;
+  font-size: 18px;
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.1s linear;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  &:hover {
+    background-color: $buttonColor;
+    color: #fff;
+    border-bottom: 2px solid darken($buttonColor, 10%);
+  }
+}
+
+.button-red {
+    color: $buttonWarningColor;
+    border-color: $buttonWarningColor;
+    &:hover {
+        background-color: $buttonWarningColor;
+        border-bottom: 2px solid darken($buttonWarningColor, 10%);
+    }
+}
+
+.button-green {
+    color: $buttonPositiveColor;
+    border-color: $buttonPositiveColor;
+    &:hover {
+        background-color: $buttonPositiveColor;
+        border-bottom: 2px solid darken($buttonPositiveColor, 10%);
+    }
+}
+
+button[type="submit"] {
+    margin: 0.5em;
+}
