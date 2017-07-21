@@ -9,38 +9,42 @@ import pluralize from 'pluralize'
 import Search from './ClientsSearch'
 import ClientsSearched from './ClientsSearchFilter'
 
-
-function HomeView(props) {
-    let list = [];
-    props.categories.forEach((category) => list.push(<Area type={category.type} key={category.id}/>));
-
-    return(
-        <div className="all-areas">
-            {list}
-        </div>
-    );
+const HomeView = () => {
+  return (
+    <div className="view home">
+      <div>{ClientsArea()}</div>
+      <div>{IssuesArea()}</div>
+      <div>{ProjectsArea()}</div>
+    </div>
+  )
 }
 
-class Area extends Component {
-  render() {
+const ClientsArea = (props) => {
     return (
-      <div className={"area " + `Area-${this.props.type}`}>
-        <NewButton type={pluralize.singular(this.props.type)} />
+      <div className={"area " + `clients-area`}>
+        <h3>Clients</h3>
         <Search />
         <ClientsSearched />
-        <GoToAll type={this.props.type} />
       </div>
-    );
-  }
+  )
 }
 
-function NewButton(props) {
-  return <a href="#">New {props.type}</a>;
+const ProjectsArea = (props) => {
+  return (
+    <div className={"area " + `projects-area`}>
+      <h3>Projects</h3>
+      <span className="coming-soon">Coming Soon</span>
+    </div>
+  )
 }
 
-
-function GoToAll(props) {
-  return <a href="#">go to all {props.type}</a>;
+const IssuesArea = (props) => {
+  return (
+    <div className={"area " + `issues-area`}>
+      <h3>Issues</h3>
+      <span className="coming-soon">Coming Soon</span>
+    </div>
+  )
 }
 
 const mapStateToProps = (state) => {

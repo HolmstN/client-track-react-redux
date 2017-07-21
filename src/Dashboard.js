@@ -23,7 +23,7 @@ const Dashboard_ = ({currentView, clickViewChange}) => {
     return 'menu__item ' + ((type===currentView) ? "menu__item--current" : "");
   }
   
-  let showView = () => {
+  const showView = () => {
     switch (currentView) {
       case 'issues':
         return <IssuesView />
