@@ -1,21 +1,17 @@
 .all-areas {
-    display: flex;
-    justify-content: space-around;
-}
+  display: flex;
+  justify-content: space-around; }
 
 .all-areas ul {
-    list-style: none;
-    padding: 0;
-}
+  list-style: none;
+  padding: 0; }
 
 .area {
-    width: 25%;
-}
+  width: 25%; }
 
 .search {
-    border: thin solid #919191;
-    border-radius: 20px;
-    width: 100%;
-    height: 2em;
-    text-align: center;
-}
+  border: thin solid #919191;
+  border-radius: 20px;
+  width: 100%;
+  height: 2em;
+  text-align: center; }
