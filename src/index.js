@@ -7,8 +7,11 @@ import rootReducer from './reducers'
 import './index.css'
 import App from './App'
 
+let now = Date.now()
+
 const initialState = {
-  clients: [{clientCode: "INF", clientName: "Infian", connectionPrimary: "N/A", id: 0, key: "0"}]
+  clients: [{clientCode: "INF", clientName: "Infian", connectionPrimary: "N/A", id: 0, key: "0"}],
+  issues: [{synopsis: "Test", information: "HELLOOOOOOO", severity: 2, opened: now, id: 0, clientId: 0 }]
 }
 
 let store = createStore(

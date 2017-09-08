@@ -3,11 +3,17 @@ import React, {Component} from 'react'
 
 import '../styles/AddClientButton.css'
 
-const AddClientButton = ({onClick, clientFormOpen, text}) => {
+const AddButton = ({onClick, text, type}) => {
+    const formatString = (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase()
+    }
+    
+    let name = `add${formatString(type)}Button`
+    
     function button(color) {
         return (
             <div className="button-holder">
-                <button className={'button button-' + color} name="addClientButton" onClick={onClick}>{text}</button>
+                <button className={'button button-' + color} name={name} onClick={onClick}>{text}</button>
             </div>
         )
     }
@@ -25,4 +31,4 @@ const AddClientButton = ({onClick, clientFormOpen, text}) => {
     }
 }
 
-export default AddClientButton
+export default AddButton
