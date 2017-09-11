@@ -7,17 +7,19 @@ export const EDIT_CLIENT = 'EDIT_CLIENT'
 export const TOGGLE_CLIENT_ACTIVE = 'TOGGLE_CLIENT_ACTIVE'
 export const MAKE_SELECTED_CLIENT = 'MAKE_SELECTED_CLIENT'
 
-
 // action creators //
 
-let nextClientId = 0;
+let nextClientId = 1;
 
 export const addClient = (client) => {
-    return {
+    let newClient = {
         type: ADD_CLIENT,
-        id: nextClientId++,
-        ...client
+        client: {
+            id: nextClientId++,
+            ...client,
+        }
     }
+    return newClient
 }
 
 export const editClient = (client) => {

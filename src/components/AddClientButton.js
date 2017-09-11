@@ -1,12 +1,28 @@
+// eslint-disable-next-line
 import React, {Component} from 'react'
 
-function AddClientButton() {
-    return (
-        <div className="button add-client">
-            <a href="/client-info">
-            </a>
-        </div>
-    )
+import '../styles/AddClientButton.css'
+
+const AddClientButton = ({onClick, clientFormOpen, text}) => {
+    function button(color) {
+        return (
+            <div className="button-holder">
+                <button className={'button button-' + color} name="addClientButton" onClick={onClick}>{text}</button>
+            </div>
+        )
+    }
+    
+    switch(text.toLowerCase()) {
+        case "cancel":
+
+            return (
+                button("red")
+            )
+        default:
+            return (
+                button("blue")
+            )
+    }
 }
 
 export default AddClientButton

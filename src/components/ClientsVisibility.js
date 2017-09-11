@@ -1,18 +1,19 @@
-// Depracated
-
-/* 
+// eslint-disable-next-line
+import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import { ClientList } from '../components/ClientList'
-import makeSelectedClient from '../actions/clients'
+import { makeSelectedClient } from '../actions/clients'
+import ClientList from './ClientList'
 
-const getVisibileClients = (clients, filter) => {
-    switch (filter) {
+const getVisibileClients = (clients, visFilter) => {
+    switch (visFilter) {
         case 'SHOW_ALL':
             return clients
         case 'SHOW_ACTIVE':
             return clients.filter(c => c.active)
         case 'SHOW_INACTIVE':
             return clients.filter(c => c.inactive)
+        default:
+            return clients
     }
 }
 
@@ -30,5 +31,10 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
+const VisibleClientList = connect(
+    mapStateToProps, 
+    mapDispatchToProps
+)(ClientList)
 
-*/
+
+export default VisibleClientList

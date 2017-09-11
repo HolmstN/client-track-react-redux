@@ -1,114 +1,56 @@
+// eslint-disable-next-line
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 
 import '../styles/HomeView.css';
 
-var pluralize=require('pluralize');
+import pluralize from 'pluralize'
 
-var ITEMS = [
-  {id: 0,name: "Item 1"},
-  {id: 1,name: "Item 2"},
-  {id: 2,name: "Item 3"},
-  {id: 3,name: "Item 4"},
-];
+import Search from './ClientsSearch'
+import ClientsSearched from './ClientsSearchFilter'
 
-
-function HomeView(props) {
-    var list = [];
-    props.categories.forEach((category) => list.push(<Area type={category.type} key={category.id}/>));
-
-    return(
-        <div className="all-areas">
-            {list}
-        </div>
-    );
+const HomeView = () => {
+  return (
+    <div className="view home">
+      <div>{ClientsArea()}</div>
+      <div>{IssuesArea()}</div>
+      <div>{ProjectsArea()}</div>
+    </div>
+  )
 }
 
-class Area extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      filterText: ''
-    };
-    
-    this.handleUserInput = this.handleUserInput.bind(this);
-  }
-  
-  handleUserInput(filterText) {
-    this.setState({
-      filterText: filterText
-    });
-  }
-  
-  render() {
+const ClientsArea = (props) => {
     return (
-      <div className={"area " + `Area-${this.props.type}`}>
-        <NewButton type={pluralize.singular(this.props.type)} />
-        <Search 
-          type={this.props.type} 
-          filterText={this.state.filterText}
-          onUserInput={this.handleUserInput}
-        />
-        <FilteredList 
-          items={ITEMS}
-          filterText={this.state.filterText} />
-        <GoToAll type={this.props.type} />
+      <div className={"area " + `clients-area`}>
+        <h3>Clients</h3>
+        <Search />
+        <ClientsSearched />
       </div>
-    );
+  )
+}
+
+const ProjectsArea = (props) => {
+  return (
+    <div className={"area " + `projects-area`}>
+      <h3>Projects</h3>
+      <span className="coming-soon">Coming Soon</span>
+    </div>
+  )
+}
+
+const IssuesArea = (props) => {
+  return (
+    <div className={"area " + `issues-area`}>
+      <h3>Issues</h3>
+      <span className="coming-soon">Coming Soon</span>
+    </div>
+  )
+}
+
+const mapStateToProps = (state) => {
+  return {
+    clients: state.clients
   }
 }
 
-function NewButton(props) {
-  return <a href="#">New {props.type}</a>;
-}
-
-class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    }
-    
-    handleChange() {
-      this.props.onUserInput(this.filterTextInput.value);
-    }
-    
-    render() {
-      return (
-      <form>
-        <input 
-          type="text" 
-          className="search"
-          placeholder="Search..." 
-          value={this.props.filterText} 
-          ref={(input) => this.filterTextInput = input}
-          onChange={this.handleChange} 
-        />
-      </form>
-    );
-  }
-}
-
-function FilteredList(props) {
-  var list = [];
-  props.items.forEach((item) => {
-    if (item.name.indexOf(props.filterText) === -1) { return; }
-    list.push(<ListItem name={item.name} key={item.id}/>);
-  });
-
-  // console.log(list.forEach(item => item.name));
-  
-  return (
-    <ul>{list}</ul>
-  );
-}
-
-function ListItem(props) {
-  return (
-  <li>{props.name}</li>
-  );
-}
-
-function GoToAll(props) {
-  return <a href="#">go to all {props.type}</a>;
-}
-
-export default HomeView;
+export default connect(mapStateToProps, null)(HomeView)

@@ -1,16 +1,15 @@
-.all-areas {
-    display: flex;
-    justify-content: space-around;
-}
+.view {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; }
 
-.all-areas ul {
-    list-style: none;
-    padding: 0;
-}
+.area {
+  width: 25vw;
+  padding: 0 2em; }
 
 .search {
-    border: thin solid #919191;
-    border-radius: 20px;
-    padding: 10px;
-    width: 30em;
-}
+  border: thin solid #919191;
+  border-radius: 20px;
+  width: 100%;
+  height: 2em;
+  text-align: center; }

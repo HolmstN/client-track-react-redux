@@ -1,33 +1,29 @@
+// eslint-disable-next-line
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
+
 import '../styles/ClientsView.css';
 
-import Client from './Client'
-import FilledClientList from '../containers/FillClientList'
-import AddClientButton from './AddClientButton'
-import ClientForm from '../components/ClientForm'
-import addClient from '../actions/clients'
+import * as actionCreators from '../actions/clients'
 
-const CLIENTS = [
-    {clientName: "Alphabet Soup", clientCode: "ABCS", connectionPrimary: "10.5.3.12"},
-    {clientName: "Google", clientCode: "GOOG", connectionPrimary: "255.255.255.255"},
-    {clientName: "BATMAN", clientCode: "DUNU", connectionPrimary: "10.93.222.8"}
-];
+import AddClient from './AddClient'
+import VisibleClientList from './ClientsVisibility'
 
-let ClientsView = ({dispatch}) => {
-    const doSubmit = (values) => {
-        dispatch(addClient(values))
+
+const ClientsView = ({dispatch}) => {
+    const doSubmit = (client) => {
+        dispatch(actionCreators.addClient(client))
     }
     
     return (
         <div className="clients-view">
-            <AddClientButton />
-            <ClientForm />
+            <AddClient onSubmit={doSubmit} />
             <ClientsTable />
         </div>
     );
 }
+
 
 function ClientsTable(props) {
     return (
@@ -39,10 +35,11 @@ function ClientsTable(props) {
                     <div className="table-cell table-head-item">Primary Connection</div>
                     <div className="table-cell table-head-item">&nbsp;</div>
                 </div>
-                <FilledClientList />
+                <VisibleClientList size="large" />
             </div>
         </div>
     );
 }
+
 
 export default connect()(ClientsView);

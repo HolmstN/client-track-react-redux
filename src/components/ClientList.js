@@ -1,22 +1,30 @@
+// eslint-disable-next-line
 import React, {Component} from 'react'
 import Client from './Client'
 
-export const ClientList = ({clients, onClientClick}) => (
-    <div className="tbody">
-        {clients.map(client =>
-            <Client
-                key={client.id}
-                {...client}
-                onClick={() => onClientClick(client.id)}
-            />
-        )}
-    </div>
-)
+const ClientList = ({clients, onClientClick, size}) => {
+    let shownClients = clients.map((client) => {
+            return (
+                <Client
+                    key={client.id}
+                    {...client}
+                    onClick={() => onClientClick(client.id)}
+                    size={size}
+                />
+        )})
+        
+    return (
+        <div className="tbody">
+            {shownClients}
+        </div>
+    )
+}
 
+export default ClientList
 
-/*  OLD STUFF BELOW
+//  OLD STUFF BELOW
 
-
+/*
 class ClientList extends Component {
     constructor(props) {
         super(props);

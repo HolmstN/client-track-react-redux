@@ -1,0 +1,50 @@
+/*
+@keyframes sheen {
+  0% {
+    transform: skewY(-45deg) translateX(0);
+  }
+  100% {
+    transform: skewY(-45deg) translateX(12.5em);
+  }
+}
+*/
+.button-holder {
+  display: block;
+  margin: 0 auto;
+  width: 20%;
+  text-align: center; }
+
+.button {
+  padding: 0.5em 1em;
+  text-align: center;
+  text-decoration: none;
+  color: #3b93d6;
+  border: 2px solid #3b93d6;
+  font-size: 18px;
+  display: inline-block;
+  border-radius: 0.3em;
+  transition: all 0.1s linear;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer; }
+  .button:hover {
+    background-color: #3b93d6;
+    color: #fff;
+    border-bottom: 2px solid #2679b8; }
+
+.button-red {
+  color: #c14747;
+  border-color: #c14747; }
+  .button-red:hover {
+    background-color: #c14747;
+    border-bottom: 2px solid #9f3636; }
+
+.button-green {
+  color: #40a038;
+  border-color: #40a038; }
+  .button-green:hover {
+    background-color: #40a038;
+    border-bottom: 2px solid #317a2b; }
+
+button[type="submit"] {
+  margin: 0.5em; }

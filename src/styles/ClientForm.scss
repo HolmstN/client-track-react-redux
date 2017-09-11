@@ -1,0 +1,42 @@
+@import 'common/colors';
+
+.form-wrapper {
+    width: 90%;
+    @media (min-width: 600px) {
+        width: 30%;
+    }
+    margin: 0 auto;
+}
+
+.input-fields {
+    text-align: center;
+}
+
+.fieldset {
+    text-align: left;
+}
+
+label {
+    color: #595959;
+    font-weight: bold;
+    padding: 0.5em 0;
+    display: block;
+}
+
+.text {
+    padding: 0.5em;
+    border: 2px solid lighten($buttonColor, 20%);
+    display: block;
+}
+
+input[type="text"] {
+    @extend .text;
+    width: 100%;
+}
+
+textarea {
+    @extend .text;
+    width: 100%;
+    height: 10em;
+    resize: none
+}

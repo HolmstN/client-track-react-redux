@@ -1,0 +1,31 @@
+.form-wrapper {
+  width: 90%;
+  margin: 0 auto; }
+  @media (min-width: 600px) {
+    .form-wrapper {
+      width: 30%; } }
+
+.input-fields {
+  text-align: center; }
+
+.fieldset {
+  text-align: left; }
+
+label {
+  color: #595959;
+  font-weight: bold;
+  padding: 0.5em 0;
+  display: block; }
+
+.text, input[type="text"], textarea {
+  padding: 0.5em;
+  border: 2px solid #8fc1e8;
+  display: block; }
+
+input[type="text"] {
+  width: 100%; }
+
+textarea {
+  width: 100%;
+  height: 10em;
+  resize: none; }
