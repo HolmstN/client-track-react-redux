@@ -2,27 +2,12 @@ import React, { Component } from 'react';
 import '../styles/IssuesView.css';
 import {UndoSymbol, CogSymbol, PlusSymbol, CheckmarkSymbol, ArrowUpSymbol} from '../svg/defs';
 
-const ROWS = [
-    <TriageRow clientCode="INFI" title="Help me!!!" age="1" key="0"/>,
-    <TriageRow clientCode="HOG" title="Harry Potter is here" age="1001" key="1" />,
-    <TriageRow clientCode="STWS" title="Episode 1: The Phantom Menace" age="0003" key="2" />
-];
-
-const TICKET_ROWS = [
-    <TicketsRow clientCode="INFI" title="Help me!!!" age="1" key="0"/>,
-    <TicketsRow clientCode="HOG" title="Harry Potter is here" age="1001" key="1" />,
-    <TicketsRow clientCode="STWS" title="Episode 1: The Phantom Menace" age="0003" key="2" />
-];
-
-
 function IssuesView(props) {
-    
-    
     return (
         <div className="issues-view-all">
             <div className="issues-view">
-                <TriageTable rows={ROWS} />
-                <TicketsTable rows={TICKET_ROWS} />
+                <TriageTable />
+                <TicketsTable />
             </div>
         </div>
     );

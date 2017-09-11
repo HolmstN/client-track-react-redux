@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 
-const ROWS = [
-    <ProjectsRow title="Hubbalub" age="2" priority="red" />,
-    <ProjectsRow title="ariwhaurah" age="3" priority="green" />,
-    <ProjectsRow title="89884u18741874812uyiaknfjasghf9ahdfwa" age="100" priority="blue" />
-];
 
 function ProjectsView(props) {
     return (
         <div className="projects-view">
-            <ProjectsTable rows={ROWS}/>
+            <ProjectsTable />
         </div>
     );
 }
